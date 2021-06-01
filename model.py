@@ -2,7 +2,7 @@ import numpy as np
 import torch
 
 
-from .DeepFlowInpainting.tools.frame_inpaint import DeepFillv1
+from DeepFlowInpainting.tools.frame_inpaint import DeepFillv1
 
 torch.backends.cudnn.enabled = True
 torch.backends.cudnn.deterministic = True
@@ -14,7 +14,6 @@ class Inpainter:
         self.model = DeepFillv1(pretrained_model=self.model_restore,
                           image_shape=(height, height),
                           res_shape=None)
-        self.model.cuda()
 
     def __call__(self, img, mask):
         h, w = img.shape[:2]
