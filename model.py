@@ -15,7 +15,8 @@ class Inpainter:
                           image_shape=(height, height),
                           res_shape=None)
 
-    def __call__(self, img, mask):
+    def __call__(self, img_n_mask):
+        img, mask = img_n_mask
         h, w = img.shape[:2]
         if h < w:
             print('Unexpected image shape')
