@@ -1,9 +1,6 @@
-import cv2
 import numpy as np
 import torch
 
-import gdown
-import os
 
 from .DeepFlowInpainting.tools.frame_inpaint import DeepFillv1
 
