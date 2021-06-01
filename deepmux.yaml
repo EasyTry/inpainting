@@ -1,5 +1,5 @@
 name: inpainting 
-env: python3.7-tensorflow2.2-pytorch-1.6-cuda10.1
+env: python3.7-tensorflow1.13.1-pytorch-1.3-cuda10.0
 python:
   call: function:call
   requirements: requirements.txt
