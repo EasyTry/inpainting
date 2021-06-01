@@ -1,3 +1,4 @@
+import io
 import numpy as np
 import torch
 
@@ -15,9 +16,13 @@ class Inpainter:
                           image_shape=(height, height),
                           res_shape=None)
 
-    def __call__(self, img_n_mask):
-        img = img_n_mask[:, :, :-1]
-        mask = img_n_mask[:, :, -1]
+    def __call__(self, data):
+        
+        together = np.load(io.BytesIO(data))
+
+        img = together[:, :, :-1]
+        mask = together[:, :, -1]
+        
         h, w = img.shape[:2]
         if h < w:
             print('Unexpected image shape')
