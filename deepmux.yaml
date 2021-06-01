@@ -1,4 +1,4 @@
-name: Inpainting 
+name: inpainting 
 env: python3.7-tensorflow2.2-pytorch-1.6-cuda10.1
 python:
   call: function:call
